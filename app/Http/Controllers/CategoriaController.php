@@ -2,27 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\productos;
-use Illuminate\Http\Request;
+use App\Models\categoria;
+use App\Http\Requests\StorecategoriaRequest;
+use App\Http\Requests\UpdatecategoriaRequest;
 
-class ProductosController extends Controller
+class CategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        $Productoss = productos::all();
-
-        return view("home", ["Productoss" => $Productoss]);
+        //
     }
-
-    
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -37,10 +31,10 @@ class ProductosController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StorecategoriaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorecategoriaRequest $request)
     {
         //
     }
@@ -48,10 +42,10 @@ class ProductosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\productos  $productos
+     * @param  \App\Models\categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function show(productos $productos)
+    public function show(categoria $categoria)
     {
         //
     }
@@ -59,10 +53,10 @@ class ProductosController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\productos  $productos
+     * @param  \App\Models\categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function edit(productos $productos)
+    public function edit(categoria $categoria)
     {
         //
     }
@@ -70,11 +64,11 @@ class ProductosController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\productos  $productos
+     * @param  \App\Http\Requests\UpdatecategoriaRequest  $request
+     * @param  \App\Models\categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, productos $productos)
+    public function update(UpdatecategoriaRequest $request, categoria $categoria)
     {
         //
     }
@@ -82,10 +76,10 @@ class ProductosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\productos  $productos
+     * @param  \App\Models\categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(productos $productos)
+    public function destroy(categoria $categoria)
     {
         //
     }

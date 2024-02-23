@@ -13,16 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('productos', function (Blueprint $table) {
             $table->id("id_producto");
-            $table->string("nombre");
-            $table->string("precio");
-            $table->string("cantidad");
-            $table->string("url");
-            $table->string("id_categoria");
-        });
-    }
+            $table->string("nombre",50);
+            $table->integer("precio",20);
+            $table->integer("cantidad");
+            $table->string("url", 150);
+            $table->unsignedBigInteger("id_categoria");
+            $table->foreign("id_categoria")->references("id_categoria")->on("categorias");
 
+        });
+
+        Schema::enableForeignKeyConstraints();
+    }
     /**
      * Reverse the migrations.php
      *
