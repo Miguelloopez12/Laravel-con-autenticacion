@@ -40,6 +40,19 @@ body {
     margin: 0 auto;
 }
 
+
+/* errores al autentiar */
+
+.error{
+    font-size: 2rem;
+    margin: auto;
+    color: white;
+    text-align: center;
+}
+
+
+
+
 .fw-300 {
     font-family: 'Comic Neue';
     font-weight: 300;
@@ -179,7 +192,7 @@ h4 {
 
 @media only screen and (max-width: 768px) {
     .menuuno {
-        margin-top: 2.9vh;
+       /* margin-top: 2.9vh;*/
     }
 }
 
@@ -299,19 +312,21 @@ h4 {
     min-height: 70vh;
     object-fit: cover;
     border: 0;
-    margin-top:4.2%;
+    /* margin-top:4.2%; */
     background-attachment: fixed !important
 
 }
 @media only screen and (max-width: 768px) {
     .container img {
-        content: url(../img/Los\ lentes\ de\ contacto\ mas\ naturales\ del\ mercado.svg);
-        margin-top:10%;
+        content: url(../assets/img/bannerprincipal/BANNERPRINCIPAL768PX.svg);
         width: 100%;
         height: 80%;
-
+        /* Puedes ajustar otras propiedades de fondo según sea necesario */
+        background-size: cover; /* Ajusta el tamaño de la imagen de fondo */
+        background-position: center; /* Ajusta la posición de la imagen de fondo */
     }
 }
+
 /* Estilos para el contenedor del contenido */
 
 .container h3 {
@@ -387,43 +402,128 @@ h4 {
 }
 
 .banner {
-    background-image: url(../img/KIT.svg);
     height: 60rem;
     width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     object-fit: cover;
-}
+    position: relative;
+  }
 
-@media only screen and (max-width:500px){
-    .banner {
-        background-image: url(../img/Banner\ 500x600.svg);
-        height: 500px;
-        width: 100%;
-        margin: 0;
-        }
-}
+  .banner img {
+    width: 100%;
+    height: auto;
+  }
 
-.botonbanner {
+  @media only screen and (max-width:2000px){
+    .banner img {
+      display: none;
+    }
+
+    .banner::before {
+      content: url(../assets/img/bannersegundario/BANNERSEGUNDARIO.svg);
+      display: block;
+      width: 100%;
+      height: 600px;
+      min-width: 100%;
+      margin: 0;
+    }
+  }
+
+
+  @media only screen and (max-width:1430px){
+    .banner img {
+      display: none;
+    }
+
+    .banner::before {
+      content: url(../assets/img/bannersegundario/BANNERSEGUNDARIO1430PX.svg);
+      display: block;
+      width: 100%;
+      height: 600px;
+      min-width: 100%;
+      margin: 0;
+    }
+  }
+
+  @media only screen and (max-width:800px){
+    .banner img {
+      display: none;
+    }
+
+    .banner::before {
+      content: url(../assets/img/bannersegundario/BANNERSEGUNDARIO768PX.svg);
+      display: block;
+      width: 100%;
+      height: 600px;
+      margin: 0;
+      min-width: 100%;
+    }
+  }
+
+  @media only screen and (max-width:500px){
+    .banner img {
+      display: none;
+    }
+
+    .banner::before {
+      content: url(../assets/img/bannersegundario/BANNERSEGUNDARIO500PX.svg);
+      display: block;
+      width: 100%;
+      height: 500px;
+      margin: 0;
+    }
+  }
+
+  .botonbanner {
     position: relative;
     /* Cambia la posición a relativa */
-    left: 16rem;
+    left: 20rem;
     /* Mueve el enlace 16 píxeles a la derecha */
-    bottom: 35px;
+    bottom: 35rem;
     /* Mueve el enlace 35 píxeles hacia arriba */
 }
 
+@media only screen and (max-width:2000px){
+    .botonbanner  {
+    position: relative;
+    left: 28rem;
+    bottom: 38rem;
+}
+}
+
+
+
+@media only screen and (max-width:1430px){
+    .botonbanner  {
+    position: relative;
+    left: 20rem;
+    bottom: 38rem;
+}
+}
+
+@media only screen and (max-width:800px){
+    .botonbanner  {
+    position: relative;
+    /* Cambia la posición a relativa */
+    left: 4rem;
+    /* Mueve el enlace 16 píxeles a la derecha */
+    bottom: 48rem;
+    /* Mueve el enlace 35 píxeles hacia arriba */
+        }
+}
 
 @media only screen and (max-width:500px){
     .botonbanner  {
     position: relative;
     /* Cambia la posición a relativa */
-    left: 1rem;
+    left: 4rem;
     /* Mueve el enlace 16 píxeles a la derecha */
-    top: 92px;
+    bottom:3rem;
     /* Mueve el enlace 35 píxeles hacia arriba */
         }
 }
+
 
 
 /* Estilos para los símbolos con contorno en el banner */
@@ -454,6 +554,8 @@ h4 {
 .sectiondosfinal {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
     /* Distribuye uniformemente el espacio entre los elementos hijos */
 }
 
@@ -461,7 +563,8 @@ h4 {
 /* Estilos para la columna izquierda en la sección final */
 
 .sectiondosfinal .sectiondos {
-    flex-basis: 40%;
+    flex-basis: 50%;
+    margin-top: 3rem;
     /* Establece el ancho de la columna izquierda al 40% del contenedor principal */
 }
 
@@ -469,7 +572,7 @@ h4 {
 /* Estilos para la columna derecha (testimoniales) en la sección final */
 
 .sectiondosfinal {
-    flex-basis: calc(60% - 2rem);
+    flex-basis: calc(50% - 2rem);
     /* Establece el ancho de la columna derecha al 60% del contenedor principal, restando 2rem para el margen */
 }
 
@@ -481,13 +584,29 @@ h4 {
     justify-content: space-between;
     /* Distribuye uniformemente el espacio entre los elementos hijos */
     margin-bottom: 3rem;
+    margin-left: 5rem;
     /* Margen en la parte inferior de los artículos */
+}
+
+@media only screen and (max-width: 768px) {
+.articlefinal img{
+    width: 75%;
+    border-radius: 2rem;
+    margin-top: 0rem;
+}
 }
 
 @media only screen and (max-width: 768px) {
     .articlefinal {
         display: grid;
+        margin: 0;
+    }
+}
 
+@media only screen and (max-width: 1486px) {
+    .sectiondosfinal {
+        flex-basis: 85%;
+        justify-content: space-evenly;
     }
 }
 
@@ -509,6 +628,20 @@ h4 {
     max-width: 35rem;
     /* Ancho máximo de la imagen del artículo */
 }
+
+@media only screen and (max-width: 1470px) {
+    .imgarticle1 {
+        margin: 4.5rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .imgarticle1 {
+        margin: 2rem;
+    }
+}
+
+
 
 
 /* Estilos para el título del artículo en la imagen */
@@ -551,7 +684,7 @@ h4 {
 /* Estilos para .gif-lentes */
 
 .gif-lentes {
-    display: block;
+    display: flex;
     /* Muestra el elemento como un bloque. */
     margin: auto;
     /* Centra el elemento horizontalmente. */
@@ -564,18 +697,18 @@ h4 {
     /* Altura del 75% del contenedor principal. */
     min-width: inherit;
     /* Hereda el ancho mínimo del contenedor principal. */
-    margin-left: 5rem;
-    /* Margen izquierdo de 5rem. Puedes ajustar según sea necesario. */
-    margin-right: 5rem;
+    margin: auto;
     /* Margen derecho de 5rem. Puedes ajustar según sea necesario. */
     border-radius: 2rem;
     /* Bordes redondos con un radio de 2rem. */
+    margin-top: 10rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1500px) {
     .gif-lentes img {
-        width: 40%;
-        margin-left: 1rem;
+        width: 90%;
+        margin: auto;
+        margin-top: 0rem;
     }
 }
 
@@ -588,6 +721,7 @@ h4 {
     /* Añade relleno alrededor del contenido del pie de página. */
     width: 100%;
     margin: 0;
+
 }
 
 
@@ -638,7 +772,7 @@ h4 {
 
 .sectionsinbordes {
     position: relative;
-    top: 14rem;
+    top: 5rem;
     margin-bottom: 12rem;
 }
 
@@ -646,6 +780,7 @@ h4 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-top: 10rem;
 }
 
 .contenedorcatalogo h4 {
@@ -967,7 +1102,7 @@ label {
 .dropdown-menu {
     position: absolute;
     z-index: 1001;
-    top: 0.3rem;
+    top: 2.5rem;
     font-size: 5rem;
 }
 

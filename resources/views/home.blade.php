@@ -1,139 +1,112 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+@extends('layouts.app')
 
 
-    <!-- Dentro de tu archivo de vista .blade.php -->
-    <link rel="stylesheet"  href="{{ asset('assets/style.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap" rel="stylesheet">
+@section('header')
 
 
-</head>
-<body>
+@endsection()
 
-         <div class="inicio">
-
-        <header class="iniciodos">
-            <div class="menuuno">
-                <h1 class="titulo">EyesGlowLenses</h1>
-
-                <nav class="menunavegacion">
-                    <a href="/">Inicio</a>
-                    <a href="#">Buscar</a>
-
-                </nav>
-
-                    <div class="container-icon">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="currentColor"
-                            class="icon-cart"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                            />
-                        </svg>
-                        <div class="count-products">
-                            <span id="contador-productos">1</span>
-                        </div>
-                    </div>
-                </header>
-
-                <header class="headerdos">
-                    <div class="menudos">
-                        <nav class="menudecategoria">
-                            <a href="/">Lentes con bordes</a>
-                            <a href="/lentessinbordes.html">Lentes sin bordes</a>
-                            <a href="#">Lentes tricolor</a>
-                        </nav>
-                    </div>
-                </header>
-            </div>
-         </svg>
-
-    <div class="container-cart-products hidden-cart">
-        <div class="cart-product">
-            <div class="info-cart-product">
-                <span class="cantidad-producto-carrito">1</span>
-                <p class="titulo-producto-carrito">Lentes Cristal</p>
-                <span class="precio-producto-carrito">$65.000</span>
-            </div>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="icon-close"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                />
-            </svg>
-        </div>
-        <div class="cart-total">
-            <h3>Total:</h3>
-            <span class="total-pagar">$65.000</span>
-        </div>
-    </div>
-</div>
 
 <main class="sectionsinbordes">
 
-
-
-    <div class="contenedorcatalogo">
-        @foreach ($Productoss as $producto )
-
-        <div class="referenciaslentecatalogo">
-            <img src="{{ asset('storage/img/' . $producto->url) }}" alt="">
-            <div class="contenidomain">
-                <h4>{{$producto -> nombre}}</h4>
-                <ul>
-                    <a href="#" class="material-symbols-outlined">shopping_cart</a>
-                    <a href="#" class="material-symbols-outlined">favorite</a>
-                </ul>
-                <a href="#" class="boton">{{$producto -> precio}}</a>
-            </div>
+    <section class="sectionuno">
+        <div class="container">
+            <img src="{{asset("assets/img/bannerprincipal/BANNERPRINCIPAL.svg")}}" alt="">
         </div>
-        @endforeach
+    </section>
+
+    <main class="session contenedor mainuno">
+        <h2 class="fw-300 centrartexto">Lentes más exitosos </h2>
+
+        <div class="contenedormain">
+
+            <div class="referenciaslentes">
+                <img src="{{asset("storage/img/GRAFHITE2.jpg")}}" alt="">
+                <div class="contenidomain">
+                    <h2>Lentes más vendidos del mes</h2>
+                    <h4>Lentes cristal</h4>
+                    <ul>
+                        <a href="#" class="material-symbols-outlined">shopping_cart</a>
+                        <a href="#" class="material-symbols-outlined">favorite</a>
+                    </ul>
+                    <a href="#" class="boton">65,000</a>
+                </div>
+            </div>
+
+            <div class="referenciaslentes">
+                <img src="{{asset("storage/img/azul.jpg")}}" alt="">
+                <div class="contenidomain">
+                    <h2>Lentes más vendidos en el año</h2>
+                    <h4>Lentes Quarzt</h4>
+                    <ul>
+                        <a href="#" class="material-symbols-outlined">shopping_cart</a>
+                        <a href="#" class="material-symbols-outlined">favorite</a>
+                    </ul>
+                    <a href="#" class="boton">65,000</a>
+                </div>
+            </div>
+
+            <div class="referenciaslentes">
+                <img src="{{asset("storage/img/GRAFHITE1.jpg")}}" alt="">
+                <div class="contenidomain">
+                    <h2>Lentes más naturales</h2>
+                    <h4>Lentes avela</h4>
+                    <ul>
+                        <a href="#" class="material-symbols-outlined">shopping_cart</a>
+                        <a href="#" class="material-symbols-outlined">favorite</a>
+                    </ul>
+                    <a href="#" class="boton">65,000</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+<section class="banner">
+    <img src="{{asset("assets/img/bannersegundario/BANNERSEGUNDARIO.svg")}}" alt="">
+<div class="boton-banner">
+    <a href="#" class="botonblanco botonbanner">¡Lo quiero!</a>
+
+</div>
+</section>
+
+
+<div class="sectiondosfinal contenedor">
+    <section class="sectiondos">
+        <h2 class="sectionacticle fw-300 centrartexto">Nuestros kits son los más completos del mercado</h2>
+
+        <article class="articlefinal">
+            <div class="imgarticle1">
+                <img src="{{asset("storage/img/Gotas Humectantes1.png")}}" alt="">
+                <h3>Kit completo </h3>
+                <p>Este kit incluye lentes sin bordes, portalentes, líquido de limpieza y pinzas para lentes</p>
+            </div>
+
+
+            <div class="imgarticle1">
+                <img src="{{asset("storage/img/Gotas Humectantes1.png")}}" alt="">
+                <h3>Kit clásico </h3>
+                <p>Este kit incluye lentes sin bordes, portalentes y líquido de limpieza</p>
+            </div>
+        </article>
+    </section>
+
+    <div class="gif-lentes">
+        <img src="{{asset("storage/img/Diseño sin título.gif")}}" alt="">
+
     </div>
+</div>
+
+
+
+
+
+
+    @section('footer')
+    @endsection
 
 </main>
 
-
-<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-    <a class="botonFinalizar" href="{{ route('logout') }}"
-       onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();">
-        {{ ('Finalizar sesión') }}
-    </a>
-
-    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-    </form>
-</div>
+@section('logout')
+@endsection()

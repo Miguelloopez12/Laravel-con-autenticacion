@@ -51,10 +51,19 @@
                 <form class="formlogin" method="POST" action="{{route ('register')}}">
                     @csrf
 
-                    <input type="text" placeholder="Ingrese su nombre" name="name">
-                    <input type="email" placeholder="Ingrese su correo electronico" name="email">
+                    <input type="text" placeholder="Ingrese su nombre" name="name" value="{{ old("name") }}">
+                    @error("name")
+                    <p class="error">{{ $message }}</p>
+                    @enderror
+                    <input type="email" placeholder="Ingrese su correo electronico" name="email" value="{{ old("email") }}">
+                    @error("email")
+                    <p class="error">{{$message}}</p>
+                    @enderror
                     <input type="password" placeholder="Contraseña" name="password">
                     <input type="password" placeholder="Confirmar contraseña" name="password_confirmation">
+                    @error("password")
+                    <p class="error">{{$message}}</p>
+                    @enderror
                     <button class="botonlogin"  type="submit">Registrarse</button>
                     <a  href="{{route ('login')}}" class="regiss botonblanco" type="button">Ir al login</a>
 

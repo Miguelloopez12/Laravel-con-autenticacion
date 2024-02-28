@@ -56,7 +56,7 @@
                     <button class="botonlogin"  type="submit">Ingresar</button>
                     <a  href="{{route('register')}}" class="regis botonblanco" >registrarse</a>
 
-                    
+
 
 
                 </form>

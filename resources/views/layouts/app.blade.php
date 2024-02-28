@@ -1,3 +1,5 @@
+@yield('header')
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +34,6 @@
     </head>
 
     <body>
-
         <div class="inicio">
 
             <header class="iniciodos">
@@ -40,7 +41,7 @@
                     <h1 class="titulo">EyesGlowLenses</h1>
 
                     <nav class="menunavegacion">
-                        <a href="/">Inicio</a>
+                        <a href="{{asset("home")}}">Inicio</a>
                         <a href="#">Buscar</a>
 
                     </nav>
@@ -55,14 +56,29 @@
                             <span id="contador-productos">1</span>
                         </div>
                     </div>
+
+
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="botonFinalizar" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ 'Finalizar sesión' }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+
+
             </header>
 
             <header class="headerdos">
                 <div class="menudos">
                     <nav class="menudecategoria">
-                        <a href="/">Lentes con bordes</a>
-                        <a href="/lentessinbordes.html">Lentes sin bordes</a>
-                        <a href="#">Lentes tricolor</a>
+                        <a href="{{route("sinbordes")}}">Lentes con bordes</a>
+                        <a href="{{route("sinbordes")}}">Lentes sin bordes</a>
+                        <a href="{{route("sinbordes")}}">Lentes tricolor</a>
                     </nav>
                 </div>
             </header>
@@ -89,32 +105,19 @@
         </div>
 
 
-
-        @yield('contenido')
-
-        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <a class="botonFinalizar" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                {{ 'Finalizar sesión' }}
-            </a>
-
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-            </form>
-        </div>
+@yield("footer")
 
 
         <footer class="footerunoclass contenedor">
             <div class="footeruno fw-300">
                 <a href="/">
-                    <img src="img/Diseño sin título (2).svg" alt="">
+                    <img src="{{ asset('storage/img/Diseño sin título (2).svg') }}" alt="">
                 </a>
                 <a href="/">
-                    <img src="img/Diseño sin título (3).svg" alt="">
+                    <img src="{{ asset('storage/img/Diseño sin título (3).svg') }}" alt="">
                 </a>
                 <a href="/">
-                    <img src="img/Diseño sin título (5).svg" alt="">
+                    <img src="{{ asset('storage/img/Diseño sin título (5).svg') }}" alt="">
                 </a>
                 <p class="derechos">Todos los derechos reservados 2023 &copy;</p>
             </div>

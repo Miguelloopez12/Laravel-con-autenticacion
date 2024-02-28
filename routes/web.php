@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProductosController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,7 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/home', [ProductosController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('Eyesglowlenses');
+
+
+Route::get('/sinbordes', [ProductosController::class, 'index'])->name('sinbordes');

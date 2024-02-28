@@ -17,10 +17,11 @@ class ProductosController extends Controller
     {
         $Productoss = productos::all();
 
-        return view("home", ["Productoss" => $Productoss]);
+        return view("sinbordes", ["Productoss" => $Productoss]);
+
     }
 
-    
+
 
 
 
